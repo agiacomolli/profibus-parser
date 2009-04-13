@@ -1,17 +1,10 @@
-/* 
- * File:   main.c
- * Author: Anderson A. Giacomolli
- *
- * Created on 13 de Abril de 2009, 20:55
- */
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "profibus.h"
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
     FILE *fDados = fopen("dados.txt", "r");
     if (fDados == NULL) {
         printf("Erro ao abrir o arquivo!\n");
@@ -33,9 +26,6 @@ int main(int argc, char** argv) {
 
     frame fr;
 
-    //while (getFrame(fDados, &fr)) printFrame(&fr);
-
-    
     while (!feof(fDados)) {
         byte = getDado(fDados);
         byte_tmp = 0;
@@ -44,9 +34,9 @@ int main(int argc, char** argv) {
 
     }
     
-
     fclose(fDados);
     fclose(fSaida);
 
     return EXIT_SUCCESS;
 }
+
