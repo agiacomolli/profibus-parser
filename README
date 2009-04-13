@@ -1,0 +1,5 @@
+Profibus frame identifier
+=========================
+
+Reads and parses a Profibus dump file.
+
